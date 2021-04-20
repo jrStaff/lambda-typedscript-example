@@ -18,8 +18,3 @@ serverless config credentials --provider aws --key CLIENTID --secret SECRET
 ```
 serverless deploy
 ```
-
-
-# Design Pattern
-
-https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)
