@@ -1,0 +1,25 @@
+service: mailgun-event-handler
+
+# Create an optimized package for our functions
+package:
+  individually: true
+
+plugins:
+  - serverless-bundle # Package our functions with Webpack
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: prod
+  region: us-east-2
+
+functions:
+  mailgunEventHandler:
+    handler: index.mailgunEventHandler
+    events:
+      - http:
+          path: mailgunEventHandler
+          method: get
+
+
+          
