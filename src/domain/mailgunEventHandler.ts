@@ -19,9 +19,9 @@ export default class MailgunEventHandler {
 
         if (this.storage !== null) { promises.push(this.storage.storeRawMailgun(rawMailgunEvent)); }
 
-        const model: MailgunEvent = this.input.processMailgunData(rawMailgunEvent);
+        const mailgunEvent: MailgunEvent = this.input.processMailgunData(rawMailgunEvent);
 
-        if (this.publisher !== null) { promises.push(this.publisher.publish(model)); }
+        if (this.publisher !== null) { promises.push(this.publisher.publish(mailgunEvent)); }
 
         return Promise.all(promises);
     }
